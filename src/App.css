@@ -1,0 +1,92 @@
+.card-wrapper {
+    width: 16%;
+    margin: .3%;
+    float: left;
+    background-color: #40BBFF;
+    color: #ffffff;
+    padding: 13px; 
+    border-radius: 6px;
+}
+
+.card--date {
+    font-size: 12;
+    opacity: 0.75;
+    font-weight: 400;
+}
+
+.color--green {
+    background-color: #50E3C2;
+}
+
+.color--pink {
+    background-color: #DF70B5;
+}
+.color--red {
+    background-color: #FF6A85;
+}
+.color--orange {
+    background-color: #FEB102;
+}
+
+.color-picker {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 4px;
+}
+
+.select {
+    position: relative;
+}
+
+.select:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: -2.5px;
+    top: -2.5px;
+    border-radius: 50%;
+    widows: 23px;
+    height: 23px;
+    border: 1px solid;
+}
+
+.blue:after {
+    background-color: #40BBFF;
+}
+
+.green:after {
+    background-color: #50E3C2;
+}
+
+.pink:after {
+    background-color: #DF70B5;
+}
+.red:after {
+    background-color: #FF6A85;
+}
+.orange:after {
+    background-color: #FEB102;
+}
+
+.input-wrapper {
+    text-align: center;
+    width: 100%;
+}
+
+.box {
+    width: 40%;
+    padding: 0 15px;
+    margin: 0 auto;
+    display: block;
+    min-height: 54px;
+}
+
+.input-title {
+
+}
+
+.input-description {
+
+}

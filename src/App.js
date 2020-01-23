@@ -50,7 +50,7 @@ class App extends Component {
     if (title.length > 0) {
       this.setState({ show: true });
     } else {
-      this.setState({show: false})
+      this.setState({ show: false });
     }
 
     //  update text
@@ -72,59 +72,74 @@ class App extends Component {
     // add it to the state
     let newData = this.state.data;
     newData = [newCard, ...newData];
-    this.setState({ data: newData });
+    this.setState({
+      data: newData,
+      title: "",
+      description: "",
+      selectedColor: "blue",
+      show: false,
+    })
   }
 
   render() {
     return (
       <div className="App">
         <div className="input-wrapper">
-          <input
-            className="box input-title"
-            type="text"
-            placeholder="Title"
-            onChange={event => this.updateTitle(event.target.value)}
-          />
-
-          <div style={{display: this.state.show ? 'block' : 'none'}}>
-            <textarea
-              className="box input-description"
+          <div className="input-container">
+            <input
+              className="box input-title"
               type="text"
-              placeholder="Description"
-              onChange={event => this.updateDescription(event.target.value)}
-            ></textarea>
-            <p>
-              {colorsToPick.map((color, index) => {
-                const selectedClass =
-                  this.state.selectedColor === color.label
-                    ? `color-picker select ${color.label}`
-                    : "color-picker";
+              placeholder="Title"
+              value={this.state.title}
+              onChange={event => this.updateTitle(event.target.value)}
+            />
 
-                return (
-                  <a
-                    key={index}
-                    onClick={() => this.checkSelectedColor(color.label)}
-                  >
-                    <span
-                      className={selectedClass}
-                      style={{ backgroundColor: color.color }}
-                    ></span>
-                  </a>
-                );
-              })}
-              <button className="create-button" onClick={this.createNewCard}>
-                Create New
-              </button>
-            </p>
+            <div
+              className="expanded-form"
+              style={{ display: this.state.show ? "block" : "none" }}
+            >
+              <textarea
+                className="box input-description"
+                type="text"
+                value={this.state.description}
+                placeholder="Description"
+                onChange={event => this.updateDescription(event.target.value)}
+              >
+              </textarea>
+              <p>
+                {colorsToPick.map((color, index) => {
+                  const selectedClass =
+                    this.state.selectedColor === color.label
+                      ? `color-picker select ${color.label}`
+                      : "color-picker";
+
+                  return (
+                    <a className="color-marker" key={index}
+                      onClick={() => this.checkSelectedColor(color.label)}
+                    >
+                      <span
+                        className={selectedClass}
+                        style={{ backgroundColor: color.color }}
+                      ></span>
+                    </a>
+                  );
+                })}
+                <button className="create-button" onClick={this.createNewCard}>
+                  Create New
+                </button>
+              </p>
+            </div>
           </div>
         </div>
 
-        {this.state.data.map(node => {
-          return <Card key={node.date} node={node} color={node.color} />;
-        })}
-      </div>
-    );
+        <div className="card-wrapper--container">
+          {this.state.data.map(node => {
+            return <Card key={node.date} node={node} color={node.color} />;
+          })}
+        </div>
+        </div>
+      );
+    }
   }
-}
 
 export default App;

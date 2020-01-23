@@ -30,7 +30,7 @@ export default class Card extends Component {
     return (
       <div className={cardClass}>
         <div className="card">
-          <h3>{title}</h3>
+          <h3 className="card-title">{title}</h3>
           <h6 className='card--date'>Created on {formatDate(date)}</h6>
           <p>{description}</p>
         </div>

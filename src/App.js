@@ -24,22 +24,27 @@ const colorsToPick = [
     label: "orange",
     color: "#FEB102"
   }
-];
+]
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      data: data,
+      data: "",
       title: "",
       description: "",
       selectedColor: "blue",
       show: false
-    };
+    }
 
     //bind click
     this.createNewCard = this.createNewCard.bind(this);
   }
+
+  // API call
+  componentWillMount() {
+  this.setState({data})
+}
 
   checkSelectedColor(color) {
     this.setState({ selectedColor: color });

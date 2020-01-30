@@ -91,7 +91,7 @@ class App extends Component {
               type="text"
               placeholder="Title"
               value={this.state.title}
-              onChange={event => this.updateTitle(event.target.value)}
+              onChange={(event) => this.updateTitle(event.target.value)}
             />
 
             <div
@@ -103,27 +103,28 @@ class App extends Component {
                 type="text"
                 value={this.state.description}
                 placeholder="Description"
-                onChange={event => this.updateDescription(event.target.value)}
+                onChange={(event) => this.updateDescription(event.target.value)}
               >
               </textarea>
               <p>
-                {colorsToPick.map((color, index) => {
+                {
+                  colorsToPick.map((color, index) => {
                   const selectedClass =
-                    this.state.selectedColor === color.label
-                      ? `color-picker select ${color.label}`
-                      : "color-picker";
+                    (this.state.selectedColor === color.label)
+                      ? `color-picker select ${color.label}` :
+                      'color-picker';
 
                   return (
-                    <a className="color-marker" key={index}
-                      onClick={() => this.checkSelectedColor(color.label)}
-                    >
+                    <a className="color-marker" key={ index } onClick={() =>
+                      this.checkSelectedColor(color.label) } >
                       <span
                         className={selectedClass}
                         style={{ backgroundColor: color.color }}
                       ></span>
                     </a>
-                  );
-                })}
+                  )
+                })
+              }
                 <button className="create-button" onClick={this.createNewCard}>
                   Create New
                 </button>

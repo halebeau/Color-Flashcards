@@ -104,21 +104,21 @@
 }
 
 .blue:after {
-    background-color: #40BBFF;
+    border-color: #40BBFF;
 }
 
 .green:after {
-    background-color: #50E3C2;
+    border-color: #50E3C2;
 }
 
 .pink:after {
-    background-color: #DF70B5;
+    border-color: #DF70B5;
 }
 .red:after {
-    background-color: #FF6A85;
+    border-color: #FF6A85;
 }
 .orange:after {
-    background-color: #FEB102;
+    border-color: #FEB102;
 }
 
 .input-wrapper {

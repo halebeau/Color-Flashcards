@@ -98,9 +98,9 @@
     left: -3.5px;
     top: -3.5px;
     border-radius: 50%;
-    widows: 24px;
+    width: 24px;
     height: 24px;
-    border: 1px solid;
+    border: 1.2px solid;
 }
 
 .blue:after {
